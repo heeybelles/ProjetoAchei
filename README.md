@@ -28,3 +28,4 @@ Novos cadastros sempre criam alunos. Para voltar ao estado inicial: botão "Rest
 
 Aviso: autenticação simulada, sem segurança real. Use apenas dados fictícios.
 # ProjetoAchei
+# ProjetoAchei
