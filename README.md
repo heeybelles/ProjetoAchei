@@ -17,7 +17,13 @@ O **Achei** é uma aplicação web moderna desenvolvida para simplificar e otimi
 Facilitar o registro, a localização e a devolução de objetos perdidos dentro da instituição, criando uma ponte eficiente entre a comunidade acadêmica e a gestão da biblioteca.
 
 ---
+## Equipe - Synapse
+ * Eduarda Belles -> UX Web Design
+ * Ellen Gouveia -> Analista
+ * Luana Fontenele -> UX/UI Design
+ * Zeus Machado -> Tester
 
+---
 ## ✨ Funcionalidades
 
 ### 👨‍🎓 Área do Aluno
