@@ -1,141 +1,131 @@
-🔎 Achei — Achados e Perdidos | FATEC
+<div align="center">
 
-Perdeu ou encontrou? A gente te ajuda!
+# 🔎 Achei — Achados e Perdidos | FATEC
 
-O Achei é uma aplicação web desenvolvida para simplificar e organizar o processo de achados e perdidos da FATEC, conectando alunos e funcionários da biblioteca em um único ambiente digital.
+**Perdeu ou encontrou? A gente te ajuda!**
 
-O sistema permite registrar objetos perdidos ou encontrados, acompanhar comunicados, receber notificações e gerenciar os itens armazenados na biblioteca.
+O **Achei** é uma aplicação web moderna desenvolvida para simplificar e otimizar o processo de achados e perdidos da FATEC, conectando alunos e funcionários da biblioteca de forma ágil e segura.
 
-🎯 Objetivo do projeto
+[![Status do Projeto](https://img.shields.io/badge/Status-MVP%20em%20desenvolvimento-yellow?style=for-the-badge)](https://github.com/heeybelles/ProjetoAchei)
+[![Tecnologias](https://img.shields.io/badge/Next.js-React-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 
-Facilitar a comunicação entre a comunidade acadêmica e a biblioteca, tornando o processo de localização, armazenamento e devolução de objetos mais organizado, acessível e eficiente.
+</div>
 
-✨ Funcionalidades
-👨‍🎓 Área do aluno
-Cadastro e login.
-Registro de objetos perdidos.
-Registro de objetos encontrados.
-Consulta de comunicados.
-Pesquisa e filtros por categoria e localização.
-Acompanhamento dos próprios comunicados.
-Notificações sobre atualizações e prazos.
-Gerenciamento do perfil.
-📚 Área da biblioteca
-Painel administrativo.
-Visualização de comunicados completos.
-Gerenciamento de objetos aguardando entrega.
-Confirmação de recebimento físico.
-Gerenciamento de solicitações de retirada.
-Validação da propriedade dos objetos.
-Controle de inventário.
-Gerenciamento de objetos com prazo de retirada vencido.
-⏰ Regras de negócio
-Prazo de até 3 dias úteis para o aluno entregar objetos encontrados à biblioteca.
-Registro automático de data e horário.
-Notificação quando o prazo de entrega vencer.
-Objetos atrasados permanecem pendentes para análise da biblioteca.
-Informações detalhadas e imagens de objetos encontrados não são exibidas publicamente.
-🎨 Identidade visual
+---
 
-A identidade visual do Achei foi pensada para transmitir confiança, organização, praticidade e modernidade.
+## 🎯 Objetivo
 
-Cor	Código
-Azul-marinho	#142B4A
-Azul principal	#2563EB
-Verde-água	#14B8A6
-Amarelo	#F5B942
-Fundo	#F3F5F8
-Branco	#FFFFFF
-🛠️ Tecnologias utilizadas
-Next.js — Framework React.
-React — Biblioteca de interface.
-TypeScript — Tipagem estática.
-Tailwind CSS — Estilização.
-Lucide React — Biblioteca de ícones.
-LocalStorage — Persistência local dos dados de demonstração.
-🚀 Como executar o projeto
-Pré-requisitos
-Node.js.
-npm.
-Git.
-1. Clone o repositório
-bash
-git clone https://github.com/SEU-USUARIO/achei.git
+Facilitar o registro, a localização e a devolução de objetos perdidos dentro da instituição, criando uma ponte eficiente entre a comunidade acadêmica e a gestão da biblioteca.
 
-2. Entre na pasta
-bash
-cd achei
+---
 
-3. Instale as dependências
-bash
-npm install
+## ✨ Funcionalidades
 
-4. Execute o projeto
-bash
-npm run dev
+### 👨‍🎓 Área do Aluno
+* **Cadastro e Login:** Acesso rápido e seguro à plataforma.
+* **Registro de Objetos:** Cadastro detalhado de itens perdidos ou encontrados.
+* **Consulta e Pesquisa:** Ferramenta de busca por comunicados e itens cadastrados.
+* **Acompanhamento:** Histórico e status atualizados dos próprios registros.
+* **Perfil e Notificações:** Gerenciamento de informações pessoais e avisos importantes.
 
-5. Acesse no navegador
-text
-http://localhost:3000
+### 📚 Área da Biblioteca
+* **Painel Administrativo:** Visão geral e controle completo do sistema.
+* **Gerenciamento de Entradas:** Acompanhamento de objetos recebidos no setor.
+* **Confirmação de Recebimentos:** Validação do recebimento físico dos itens.
+* **Validação de Propriedade:** Protocolos seguros para garantir que o dono legítimo reaveja o objeto.
+* **Controle de Inventário:** Gestão de itens pendentes e solicitações de retirada.
 
-🔐 Acesso para demonstração
+---
 
-O projeto possui usuários fictícios para testar os diferentes perfis.
+## ⏰ Regras de Negócio
 
-Perfil	Email	Senha
-Aluno	aluno@fatec.edu.br	aluno123
-Biblioteca	biblioteca@fatec.edu.br	biblioteca123
+* Prazo de **3 dias úteis** para a entrega de objetos encontrados na biblioteca.
+* Sistema automatizado de **notificações de vencimento** de prazos.
+* Controle rigoroso de objetos pendentes de devolução.
+* **Privacidade e Proteção** de informações sensíveis referentes aos itens e usuários.
 
-Observação: a autenticação desta versão é simulada e os dados são armazenados localmente no navegador, sem integração com banco de dados.
+---
 
-Não utilizar credenciais ou informações pessoais reais nesta versão.
+## 🎨 Identidade Visual
 
-📂 Estrutura do projeto
-text
-achei/
-├── public/
-├── src/
-│   ├── app/
-│   │   ├── login/
-│   │   ├── cadastro/
-│   │   ├── home/
-│   │   ├── comunicados/
-│   │   ├── perfil/
-│   │   ├── notificacoes/
-│   │   └── biblioteca/
-│   ├── components/
-│   │   ├── ui/
-│   │   ├── layout/
-│   │   ├── comunicados/
-│   │   └── dashboard/
-│   ├── contexts/
-│   ├── hooks/
-│   ├── lib/
-│   ├── services/
-│   └── types/
-├── package.json
-└── README.md
+A paleta de cores institucional utilizada no projeto segue o padrão abaixo:
 
-🔒 Sobre o armazenamento de dados
+| Cor | Código Hexadecimal |
+| :--- | :--- |
+| **Azul-marinho** | `#142B4A` |
+| **Azul principal** | `#2563EB` |
+| **Verde-água** | `#14B8A6` |
+| **Amarelo** | `#F5B942` |
+| **Fundo** | `#F3F5F8` |
+| **Branco** | `#FFFFFF` |
 
-Nesta primeira versão, o Achei utiliza dados mockados e localStorage para simular o funcionamento da aplicação.
+---
 
-Isso permite demonstrar os fluxos de cadastro, autenticação, comunicados, notificações e gerenciamento da biblioteca sem a necessidade de um backend.
+## 🛠️ Tecnologias Utilizadas
 
-Limitação: os dados são armazenados individualmente em cada navegador e não são compartilhados entre usuários.
+O projeto foi construído utilizando as seguintes tecnologias e ferramentas:
 
-Uma futura evolução poderá incluir backend, banco de dados e autenticação real.
+* **[Next.js](https://nextjs.org/)** — Framework React para produção
+* **[React](https://react.dev/)** — Biblioteca para construção de interfaces
+* **[TypeScript](https://www.typescriptlang.org/)** — Superset JavaScript com tipagem estática
+* **[Tailwind CSS](https://tailwindcss.com/)** — Estilização utilitária e moderna
+* **[Lucide React](https://lucide.dev/)** — Ícones modernos e limpos
+* **[LocalStorage](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage)** — Persistência simulada de dados
 
-📌 Status do projeto
+---
 
-MVP em desenvolvimento.
+## 🚀 Como Executar o Projeto
 
-O objetivo desta versão é validar a experiência do usuário, os fluxos principais e as regras de negócio do sistema.
+Certifique-se de ter o **Node.js**, o **npm** e o **Git** devidamente instalados em sua máquina.
 
-👩‍💻 Desenvolvimento
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/heeybelles/ProjetoAchei.git
+   ```
 
-Projeto acadêmico desenvolvido para a FATEC.
+2. **Entre na pasta do projeto:**
+   ```bash
+   cd ProjetoAchei
+   ```
 
-ACHEI — Achados e Perdidos
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-Conectando pessoas aos seus objetos perdidos.
+4. **Execute o projeto em modo de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
+
+5. **Acesse no navegador:**
+   Abra o link [http://localhost:3000](http://localhost:3000).
+
+---
+
+## 🔐 Acesso para Demonstração
+
+Como a autenticação e o armazenamento são simulados inteiramente no navegador utilizando o `LocalStorage` (sem banco de dados externo), você pode utilizar as seguintes credenciais de teste:
+
+| Perfil | E-mail | Senha |
+| :--- | :--- | :--- |
+| **Aluno** | `aluno@fatec.edu.br` | `aluno123` |
+| **Biblioteca** | `biblioteca@fatec.edu.br` | `biblioteca123` |
+
+---
+
+## 📌 Status do Projeto
+
+> **MVP em desenvolvimento ativo.**
+
+---
+
+## 👩‍💻 Projeto Acadêmico
+
+Desenvolvido com dedicação como projeto acadêmico para a **FATEC**.
+
+<div align="center">
+
+*ACHEI — Conectando pessoas aos seus objetos perdidos.*
+
+</div>
