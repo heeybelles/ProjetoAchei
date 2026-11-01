@@ -6,7 +6,6 @@
 
 O **Achei** é uma aplicação web moderna desenvolvida para simplificar e otimizar o processo de achados e perdidos da FATEC, conectando alunos e funcionários da biblioteca de forma ágil e segura.
 
-[![Status do Projeto](https://img.shields.io/badge/Status-MVP%20em%20desenvolvimento-yellow?style=for-the-badge)](https://github.com/heeybelles/ProjetoAchei)
 [![Tecnologias](https://img.shields.io/badge/Next.js-React-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 
 </div>
