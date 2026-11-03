@@ -1,6 +1,7 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import { Loader2 } from 'lucide-react';
 import AppShell from '@/components/layout/AppShell';
 import Footer from '@/components/layout/Footer';
 import PublicHeader from '@/components/layout/PublicHeader';
@@ -9,7 +10,14 @@ import { useAuth } from '@/contexts/AuthContext';
 /** Páginas públicas que também aparecem dentro da área do aluno quando há sessão. */
 export default function AdaptiveShell({ children }: { children: ReactNode }) {
   const { usuario, carregando } = useAuth();
-  if (!carregando && usuario?.perfil === 'aluno') return <AppShell>{children}</AppShell>;
+  if (carregando) {
+    return (
+      <div className="flex min-h-screen items-center justify-center" role="status" aria-label="Carregando">
+        <Loader2 className="h-8 w-8 animate-spin text-brand" />
+      </div>
+    );
+  }
+  if (usuario?.perfil === 'aluno') return <AppShell>{children}</AppShell>;
   return (
     <div className="flex min-h-screen flex-col">
       <PublicHeader />

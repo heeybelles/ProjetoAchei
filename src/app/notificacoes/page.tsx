@@ -3,6 +3,7 @@
 import { useMemo, useState } from 'react';
 import { BellOff, CheckCheck } from 'lucide-react';
 import AppShell from '@/components/layout/AppShell';
+import ComunicadoDetalhes from '@/components/comunicados/ComunicadoDetalhes';
 import NotificationItem from '@/components/notifications/NotificationItem';
 import EmptyState from '@/components/ui/EmptyState';
 import { Button } from '@/components/ui/Button';
@@ -10,15 +11,17 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useData } from '@/contexts/DataContext';
 import { useToast } from '@/contexts/ToastContext';
 import { marcarComoLida, marcarTodasComoLidas } from '@/services/notificacao.service';
+import type { Comunicado } from '@/types/comunicado';
 import { TIPO_NOTIFICACAO_LABEL, type TipoNotificacao } from '@/types/notificacao';
 
 type Filtro = 'todas' | 'nao-lidas' | TipoNotificacao;
 
 function Conteudo() {
   const { usuario } = useAuth();
-  const { notificacoes, atualizar } = useData();
+  const { notificacoes, comunicados, atualizar } = useData();
   const toast = useToast();
   const [filtro, setFiltro] = useState<Filtro>('todas');
+  const [comunicadoAberto, setComunicadoAberto] = useState<Comunicado | null>(null);
 
   const minhas = useMemo(() => notificacoes.filter((n) => n.usuarioId === usuario?.id).sort((a, b) => b.criadoEm.localeCompare(a.criadoEm)), [notificacoes, usuario]);
   const naoLidas = minhas.filter((n) => !n.lida).length;
@@ -48,9 +51,19 @@ function Conteudo() {
 
       <div className="mt-4">
         {lista.length === 0 ? <EmptyState icone={BellOff} titulo="Nenhuma notificação por aqui" texto="Quando houver novidades sobre seus comunicados, elas aparecerão nesta página." /> : (
-          <ul className="space-y-3">{lista.map((n) => <NotificationItem key={n.id} n={n} onLer={(id) => { marcarComoLida(id); atualizar(); }} />)}</ul>
+          <ul className="space-y-3">{lista.map((n) => (
+            <NotificationItem key={n.id} n={n} onLer={(id) => { marcarComoLida(id); atualizar(); }}
+              onVerComunicado={(cid) => {
+                const c = comunicados.find((x) => x.id === cid) ?? null;
+                if (c) {
+                  if (!n.lida) { marcarComoLida(n.id); atualizar(); }
+                  setComunicadoAberto(c);
+                }
+              }} />
+          ))}</ul>
         )}
       </div>
+      <ComunicadoDetalhes comunicado={comunicadoAberto} onClose={() => setComunicadoAberto(null)} modo={comunicadoAberto?.autorId === usuario?.id ? 'autor' : 'publico'} />
     </div>
   );
 }

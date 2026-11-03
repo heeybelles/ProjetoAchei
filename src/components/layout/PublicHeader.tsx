@@ -46,7 +46,7 @@ export default function PublicHeader() {
             {links.map((l) => <Link key={l.href} href={l.href} onClick={() => setAberto(false)} className={`${link} py-3`}>{l.rotulo}</Link>)}
           </nav>
           <div className="mt-3 flex gap-2">
-            {usuario ? <LinkButton href={painel} cheio>Ir para meu painel</LinkButton> : (
+            {usuario ? <LinkButton href={painel} cheio>{usuario.perfil === 'funcionario' ? 'Abrir painel da biblioteca' : 'Ir para meu painel'}</LinkButton> : (
               <><LinkButton href="/login" variante="secundario" cheio>Entrar</LinkButton><LinkButton href="/cadastro" cheio>Criar conta</LinkButton></>
             )}
           </div>

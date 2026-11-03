@@ -32,8 +32,7 @@ export default function Landing() {
         <section className="bg-white">
           <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:py-20">
             <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-brand-soft px-3 py-1 text-sm font-semibold text-brand"><ShieldCheck className="h-4 w-4" aria-hidden />Achados e Perdidos — FATEC</p>
-              <h1 className="mt-5 text-4xl font-extrabold leading-tight sm:text-5xl">Perdeu ou encontrou algo na FATEC?</h1>
+              <h1 className="text-4xl font-extrabold leading-tight text-navy sm:text-5xl">Perdeu ou encontrou algo na FATEC?</h1>
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-suave">Com o Achei, encontrar objetos perdidos ficou mais simples. Registre, acompanhe e ajude a comunidade acadêmica.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <LinkButton href="/comunicados" tamanho="lg" icone={<Search className="h-5 w-5" />}>Encontrar meu objeto</LinkButton>

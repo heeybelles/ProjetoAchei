@@ -16,6 +16,8 @@ const larguras = { sm: 'max-w-md', md: 'max-w-xl', lg: 'max-w-3xl', xl: 'max-w-5
 
 export default function Modal({ aberto, onClose, titulo, descricao, children, rodape, largura = 'md' }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
   useEffect(() => {
     if (!aberto) return;
@@ -24,7 +26,7 @@ export default function Modal({ aberto, onClose, titulo, descricao, children, ro
     document.body.style.overflow = 'hidden';
     ref.current?.focus();
     const teclado = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') onCloseRef.current();
       if (e.key === 'Tab' && ref.current) {
         const itens = ref.current.querySelectorAll<HTMLElement>('a[href],button:not([disabled]),input:not([disabled]),select,textarea,[tabindex]:not([tabindex="-1"])');
         if (itens.length === 0) return;
@@ -39,7 +41,7 @@ export default function Modal({ aberto, onClose, titulo, descricao, children, ro
       document.body.style.overflow = overflow;
       anterior?.focus?.();
     };
-  }, [aberto, onClose]);
+  }, [aberto]);
 
   if (!aberto) return null;
   return (

@@ -20,7 +20,7 @@ export default function LibraryShell({ abas, ativa, onChange, children }: { abas
     <RequireAuth perfil="funcionario">
       <div className="min-h-screen lg:pl-72">
         <aside className="fixed inset-y-0 left-0 hidden w-72 flex-col bg-navy p-5 lg:flex">
-          <div className="mb-2"><Logo claro href="/biblioteca" /></div>
+          <div className="mb-2" onClick={() => onChange('resumo')}><Logo claro href="/biblioteca" /></div>
           <p className="mb-6 ml-1 mt-3 text-xs font-semibold text-sol">Painel da biblioteca</p>
           <nav aria-label="Seções da biblioteca" className="flex flex-1 flex-col">
             <ul className="space-y-1">
@@ -47,7 +47,7 @@ export default function LibraryShell({ abas, ativa, onChange, children }: { abas
 
         <header className="sticky top-0 z-40 border-b border-slate-200 bg-white lg:hidden">
           <div className="flex h-14 items-center justify-between px-4">
-            <Logo href="/biblioteca" mostrarSubtitulo={false} />
+            <div onClick={() => onChange('resumo')}><Logo href="/biblioteca" mostrarSubtitulo={false} /></div>
             <button onClick={sair} className="flex min-h-[40px] items-center gap-1.5 rounded-lg px-3 text-sm font-semibold text-navy hover:bg-slate-100"><LogOut className="h-4 w-4" />Sair</button>
           </div>
           <nav aria-label="Seções da biblioteca (celular)" className="flex gap-1 overflow-x-auto px-3 pb-2">

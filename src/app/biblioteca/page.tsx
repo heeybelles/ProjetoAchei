@@ -20,9 +20,14 @@ export default function BibliotecaPage() {
   const { comunicados, solicitacoes } = useData();
   const hash = useHash();
   const [aba, setAba] = useState('resumo');
-  useEffect(() => { if (IDS.includes(hash)) setAba(hash); }, [hash]);
+  useEffect(() => { setAba(IDS.includes(hash) ? hash : 'resumo'); }, [hash]);
 
-  const mudar = (id: string) => { setAba(id); window.history.replaceState(null, '', `#${id}`); window.scrollTo({ top: 0 }); };
+  const mudar = (id: string) => {
+    setAba(id);
+    window.history.replaceState(null, '', id === 'resumo' ? '/biblioteca' : `#${id}`);
+    window.dispatchEvent(new HashChangeEvent('hashchange'));
+    window.scrollTo({ top: 0 });
+  };
   const ind = calcularIndicadores(comunicados, solicitacoes);
   const abas: AbaBiblioteca[] = [
     { id: 'resumo', rotulo: 'Resumo', Icon: LayoutDashboard },

@@ -31,7 +31,7 @@ function Conteudo() {
   return (
     <div className="space-y-8">
       <header>
-        <h1 className="text-3xl font-extrabold">Olá, {primeiroNome(usuario.nome)}! 👋</h1>
+        <h1 className="text-3xl font-extrabold">Olá, {primeiroNome(usuario.nome)}!</h1>
         <p className="mt-1 text-suave">Vamos encontrar o que você procura?</p>
         <div className="mt-5 flex flex-col gap-3 sm:flex-row">
           <Button tamanho="lg" icone={<PackageSearch className="h-5 w-5" />} onClick={() => abrir('PERDIDO')}>Perdi um objeto</Button>

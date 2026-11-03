@@ -61,7 +61,7 @@ function Dados() {
   return (
     <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
       <section className="card flex flex-col items-center p-6 text-center">
-        <span className="flex h-24 w-24 items-center justify-center rounded-full bg-gradient-to-br from-brand to-navy text-3xl font-extrabold text-white" aria-hidden>{iniciais(usuario.nome)}</span>
+        <span className="flex h-24 w-24 items-center justify-center rounded-full bg-navy text-3xl font-extrabold text-white" aria-hidden>{iniciais(usuario.nome)}</span>
         <h2 className="mt-4 text-xl font-bold">{usuario.nome}</h2>
         <p className="text-sm text-suave">{usuario.curso}</p>
         <div className="mt-6 flex w-full flex-col gap-2">
